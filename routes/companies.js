@@ -79,7 +79,6 @@ router.delete("/:code", async function(req, res, next){
       RETURNING code`,
       [req.params.code]
     );
-    console.log(result.rows)
 
     if (result.rows.length === 0) throw new ExpressError("Company doesn't exist in our database", 404);
 
